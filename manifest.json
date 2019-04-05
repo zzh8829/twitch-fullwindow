@@ -1,0 +1,43 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"manifest_version": 2,
+	"name": "Twitch Fullwindow",
+	"short_name": "Twitch Fullwindow",
+	"version": "1.1",
+
+	"description": "View Twitch in Fullwindow with Chat",
+	"icons": {
+		"16": "favicon.ico",
+		"32": "GlitchIcon_purple.png",
+		"128": "GlitchIcon_purple.png"
+	},
+
+	"author": "Zihao Zhang | zzh8829@gmail.com",
+
+	"content_scripts": [
+		{
+			"matches": ["http://www.twitch.tv/*"],
+			"css": [
+				"jquery-ui-1.10.4.custom.css"
+			],
+			"js": [
+				"jquery-2.1.1.js",
+				"jquery-ui-1.10.4.custom.js",
+				"twitchfullwindow.js"
+			]
+		}
+	],
+
+	"background": {
+		"scripts": ["background.js"]
+
+	},
+
+	"permissions": [
+		"http://www.twitch.tv/*",
+		"tabs",
+		"storage",
+		"webNavigation"
+	]
+}
